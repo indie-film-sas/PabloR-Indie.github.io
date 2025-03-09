@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* (Existing CSS - keep all the existing styles) */
+
+/* Modified Hero Section Styles for Non-Index Pages */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('../img/iconic_image.jpg') no-repeat center center/cover; /* Corrected path */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* specific  non index hero */
+body:not(#index) .hero {
+    height: 90px;
+    overflow: hidden; /* Crop the image */
+}
+
+body:not(#index) .hero-content h1,
+body:not(#index) .hero-content p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900; /* Roboto Heavy */
+    font-size: 20pt;  /* At least 20pt */
+}
+
+body:not(#index) .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #00457C;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+body:not(#index) .hero-content h1,
+body:not(#index) .hero-content p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900; /* Roboto Heavy */
+    font-size: 20pt;  /* At least 20pt */
+    line-height: 1.2; /* Adjust this value as needed */
+    margin: 0; /* Removes top and bottom margins */
+}
+body {
+    font-family: 'Roboto', sans-serif !important; /* Use Roboto as the primary font */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}

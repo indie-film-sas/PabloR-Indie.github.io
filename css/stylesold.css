@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* General Reset and Base Styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Roboto', sans-serif; /* Use Roboto as the primary font */
+    background-color: #fff; /* White background */
+    color: #333; /* Default text color (can be overridden) */
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, footer {
+    background-color: #f0f0f0; /* Light gray for header/footer */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+/* Links */
+a {
+    color: #385777;  /* Use the specified color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    width: 30%; /* Adjust as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Staff List Styles */
+#staff-list ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#staff-list h3 {
+    margin-top: 15px;
+    color: #385777; /* Color the staff category headings */
+}
+
+/* ADD MORE STYLES HERE */
