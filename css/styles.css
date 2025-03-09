@@ -68,12 +68,14 @@ nav ul li a {
     position: relative;
     width: 100%;
     height: 80vh;
-    background: url('../img/iconic_image.jpg') no-repeat center center/cover;
+    /* fallback image for the background */
+    background: url('../img/image1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    overflow: hidden; /* Ensures the carousel doesn't overflow */
 }
 
 /* Hero Section on Non-Index Pages */
@@ -85,6 +87,7 @@ body:not(#index) .hero {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;  /* Remove background image */
 }
 
 /* Hero Content on Non-Index Pages */
@@ -109,6 +112,7 @@ body:not(#index) .hero-content {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.45);
+    z-index: 1; /* Ensure the overlay is above the images */
 }
 
 .hero-content {
@@ -118,6 +122,37 @@ body:not(#index) .hero-content {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
+}
+
+.hero-content img {
+    max-width: 300px;
+    opacity: 1;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-start; /* Aligns images to the left */
+    align-items: center;
+    overflow: hidden; /* Ensures images do not overflow */
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.carousel img.active {
+    opacity: 1;
 }
 
 /* Sponsors Section (General) */
@@ -229,30 +264,54 @@ footer {
     object-fit: contain; /* and this property */
 
 }
-.carousel {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: flex-start; /* Aligns images to the left */
-    align-items: center;
-    overflow: hidden; /* Ensures images do not overflow */
-}
-/*New properties and styling*/
-.container section img {
-    max-width: 200px;
-    height: auto;
-    float: left;
-    margin-right: 20px;
-    max-height: 200px;  /* add this property */
-    object-fit: contain; /* and this property */
-
-}
 
 .section_biography{
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    display: block;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the menu */
+        flex-direction: column; /* Stack the links vertically */
+        text-align: center;
+        position: absolute;
+        top: 50px; /* Adjust based on the nav height */
+        left: 0;
+        background: #00457C;
+        width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    nav ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the hamburger icon */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 }
