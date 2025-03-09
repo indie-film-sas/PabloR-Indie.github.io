@@ -55,29 +55,12 @@
             position: relative;
             width: 100%;
             height: 80vh;
-            overflow: hidden;
-        }
-        .carousel {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            right: 0;
-            text-align: right;
-        }
-        .carousel img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            animation: fade 100s infinite;
-        }
-        @keyframes fade {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            40% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 0; }
+            background: url('img/iconic_image.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
         }
         .hero-overlay {
             position: absolute;
@@ -88,14 +71,37 @@
         .hero-content {
             position: absolute;
             top: 50%;
-            right: 10%;
-            transform: translateY(-50%);
-            text-align: right;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             z-index: 2;
         }
         .hero-content img {
             max-width: 300px;
             opacity: 1;
+        }
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+        .sponsors {
+            padding: 40px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .sponsors a {
+            display: inline-block;
+            margin: 20px;
+        }
+        .sponsors img {
+            max-width: 180px;
+            max-height: 80px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
         }
     </style>
 </head>
@@ -111,18 +117,34 @@
     </nav>
 
     <header class="hero">
-        <div class="carousel">
-            <img src="img/image1.jpg" alt="Slide 1">
-            <img src="img/image2.jpg" alt="Slide 2">
-            <img src="img/image3.jpg" alt="Slide 3">
-            <img src="img/image4.jpg" alt="Slide 4">
-            <img src="img/image5.jpg" alt="Slide 5">
-        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="img/logo_pons_celebracion.png" alt="Pons Celebración">
             <p>Una Celebración de la Arquitectura y la Innovación</p>
         </div>
     </header>
+
+    <main class="container">
+        <section>
+            <p><strong>Centro de Arte Contemporáneo Córdoba</strong> - 12 de marzo al 8 de junio 2025</p>
+        </section>
+    </main>
+
+    <section class="sponsors">
+        <h3>Produce</h3>
+        <a href="https://www.indie-films.site/" target="_blank"><img src="img/logo_indiefilms.png" alt="Indie Films"></a>
+        <h3>Invita</h3>
+        <a href="https://www.instagram.com/chateau.cac/?hl=es" target="_blank"><img src="img/logo_cac.png" alt="CAC Chateau Carreras"></a>
+        <a href="https://cultura.cba.gov.ar/" target="_blank"><img src="img/logo_cultura.png" alt="Agencia Córdoba Cultura"></a>
+        <a href="https://www.cba.gov.ar/" target="_blank"><img src="img/logo_gobierno.png" alt="Gobierno de Córdoba"></a>
+        <h3>Con el apoyo de:</h3>
+        <div class="support-logos">
+            <!-- Espacio para 16 logos adicionales -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Celebración Osvaldo Pons | Diseño y producción por Indie Films</p>
+    </footer>
 </body>
 </html>
