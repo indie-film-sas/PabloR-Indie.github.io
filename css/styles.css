@@ -1,57 +1,41 @@
 /* styles.css */
 
-/* (Existing CSS - keep all the existing styles) */
+/* General Reset and Base Styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
-/* Modified Hero Section Styles for Non-Index Pages */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    background: url('../img/iconic_image.jpg') no-repeat center center/cover; /* Corrected path */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    font-family: 'Roboto', sans-serif !important; /* Use Roboto as the primary font */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px; /* Adjusted padding */
     text-align: center;
-    color: white;
 }
 
-/* specific  non index hero */
-body:not(#index) .hero {
-    height: 90px;
-    overflow: hidden; /* Crop the image */
-}
-
-body:not(#index) .hero-content h1,
-body:not(#index) .hero-content p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900; /* Roboto Heavy */
-    font-size: 20pt;  /* At least 20pt */
-}
-
-body:not(#index) .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-.hero-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.45);
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
+/* New Styles from index.html */
 nav {
     position: fixed;
     top: 0;
@@ -78,30 +62,141 @@ nav ul li a {
     color: white;
     font-weight: bold;
 }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('../img/iconic_image.jpg') no-repeat center center/cover; /* Corrected path */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* specific  non index hero */
+body:not(#index) .hero {
+    height: auto; /* Height adjusts to content */
+    min-height: 80px; /* Ensure minimum height */
+    overflow: hidden;
+    position: relative;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    padding: 10px 0; /* 10px padding on top and bottom */
+}
+
 body:not(#index) .hero-content h1,
 body:not(#index) .hero-content p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900; /* Roboto Heavy */
-    font-size: 20pt;  /* At least 20pt */
-    line-height: 1.2; /* Adjust this value as needed */
-    margin: 0; /* Removes top and bottom margins */
-}
-body {
-    font-family: 'Roboto', sans-serif !important; /* Use Roboto as the primary font */
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 900;
+    font-size: 20pt;
+    line-height: 1.2;
     margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #333;
+    text-align: center; /* Ensure text is centered */
 }
-/* styles.css */
 
-/* (Existing CSS - keep all the existing styles) */
+body:not(#index) .hero-content {
+    position: static; /* Remove absolute positioning */
+    transform: none; /* Remove translation */
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.sponsors {
+    padding: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.sponsors a {
+    display: inline-block;
+    margin: 20px;
+}
+
+.sponsors img {
+    max-width: 180px;
+    max-height: 80px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+/*Existing Styles from old css to ensure compaitibility*/
+#staff-list ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#staff-list h3 {
+    margin-top: 15px;
+    color: #385777; /* Color the staff category headings */
+}
+
+/* Contact Form Styles (add to styles.css) */
+#contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for width: 100% to work correctly */
+    font-family: 'Roboto', sans-serif;
+}
+
+#contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#contact-form button[type="submit"] {
+    background-color: #385777;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: #284058;
+}
 
 /* Moved Sponsors Section to Bottom - Non-Index Pages */
 body:not(#index) .sponsors {
     text-align: center; /* Center the logos */
     padding: 10px 0;      /* Reduce padding */
     background-color: #f0f0f0; /* Optional: Add a background color */
+    position: relative;
 }
 
 body:not(#index) .sponsors h3 {
