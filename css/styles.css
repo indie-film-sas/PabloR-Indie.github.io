@@ -93,3 +93,28 @@ body {
     background-color: #ffffff;
     color: #333;
 }
+/* styles.css */
+
+/* (Existing CSS - keep all the existing styles) */
+
+/* Moved Sponsors Section to Bottom - Non-Index Pages */
+body:not(#index) .sponsors {
+    text-align: center; /* Center the logos */
+    padding: 10px 0;      /* Reduce padding */
+    background-color: #f0f0f0; /* Optional: Add a background color */
+}
+
+body:not(#index) .sponsors h3 {
+    display: none;   /* Hide the "Produce" heading */
+}
+
+body:not(#index) .sponsors a {
+    display: inline-block; /* Ensure they are on the same line */
+    margin: 5px;          /* Reduce margin */
+}
+
+body:not(#index) .sponsors img {
+    max-width: 50px;       /* Reduce logo width */
+    max-height: 30px;      /* Reduce logo height */
+    vertical-align: middle; /* Align images vertically */
+}
