@@ -43,6 +43,9 @@ nav {
     background: #00457C;
     padding: 10px 0;
     z-index: 1000;
+    display: flex; /* Add flex container */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Vertically align items */
 }
 
 nav ul {
@@ -276,6 +279,7 @@ footer {
     display: none; /* Hidden by default */
     cursor: pointer;
     padding: 10px;
+    color: white; /* Added color to the icon */
 }
 
 .menu-toggle .bar {
@@ -310,8 +314,9 @@ footer {
 
     .menu-toggle {
         display: block; /* Show the hamburger icon */
-        position: absolute;
-        top: 10px;
-        right: 10px;
+        position: relative; /* Change to relative */
+        top: 0;   /* Remove top positioning */
+        right: 0; /* Remove right positioning */
+        align-self: flex-start; /* Align to the start */
     }
 }
