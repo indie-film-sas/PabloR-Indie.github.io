@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR2 - Celebración</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-            position: relative;
-        }
-        .container {
-            position: relative;
-        }
-        .logo {
-            width: 300px; /* Ajusta según el tamaño del logo */
-            height: auto;
-        }
-        .overlay-number {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 100px;
-            font-weight: bold;
-            color: red;
-            opacity: 0.7;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="img/logo_pons_celebracion.png" alt="Logo Celebración" class="logo">
-        <div class="overlay-number">3</div>
-    </div>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Iglesia AR</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Iglesia AR" />    
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Iglesia AR" />
+    <link type="text/css" href="css/styles_glb.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="/glb/qr3_IGLESIA.glb" ar ar-modes="webxr quick-look" camera-controls tone-mapping="neutral" poster="/img/qr1_posterIglesia.webp" shadow-intensity="1">
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="/img/ar_hand_prompt.png">
+      </div>
+    </model-viewer>  
+    <script src="js/script_glb.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
 </html>
