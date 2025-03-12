@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR4 Audio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var audio = document.querySelector("audio");
@@ -12,14 +16,77 @@
             }
         });
     </script>
+<style>
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: #fff;
+    }
+    
+    .flex-container > div {
+      background-color: #fff;
+      width: 50%;
+      margin: 0px;
+      margin-top: 50px;
+      margin-left: 5px;
+      text-align: center;
+      line-height: 75px;
+      
+      font-size: 20px;
+    }
+    .textoChina {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      text-align: justify;
+      margin: 10%;
+      font-size: larger;
+    }
+    </style>
 </head>
 <body>
-    <audio controls autoplay>
+
+    <audio id="audioChina">
         <source src="audio/china.mp3" type="audio/mpeg">
         <source src="audio/china.ogg" type="audio/ogg">
         <source src="audio/china.wav" type="audio/wav">
         <source src="audio/china.mpeg" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
+    <br>
+<div class="flex-container">
+    <div>
+        <a onclick="playAudio()" type="button"> <img src="img/play.svg" alt="Reproducir Audio" width="50%"> </a>
+    </div>
+    
+    <div>
+        <a onclick="pauseAudio()" type="button"><img src="img/pause.svg" alt="Pausar Audio" width="50%" > </a> 
+    </div>
+    
+</div>
+<div class="textoChina">
+    <h1>Querido Osvaldo, si mal no recuerdo, fue en el año 1971 que me mostraste por primera vez en "La Carolina" las "travesuras" que hacías con tu máquina fotográfica. Lo que vi me impactó profundamente.<br>
+
+        Me deslumbró. Aquellas extrañas imágenes me parecieron simplemente obras de arte, y realicé que me sumergía de pronto en una dimensión desconocida de colores, de formas, pero sobre todo de sugerencia, de magia y de misterio.<br>
+        
+        A lo largo de todos estos años, lo insinué hasta el cansancio, en que expusieras lo que hacías. Hoy me entero con alegría que tus mágicas "travesuras" van a colgar, ¡por fin!, de las paredes de un museo. ¡Bravo!<br>
+        
+        La próxima vez, no tardes 20 años en hacerme caso...<br>
+        
+        Amigo y maestro, un gran abrazo.<br>
+        </h1>
+  
+</div>
+<script>
+    var x = document.getElementById("audioChina"); 
+    
+    function playAudio() { 
+      x.play(); 
+    } 
+    
+    function pauseAudio() { 
+      x.pause(); 
+    } 
+    </script>
 </body>
 </html>
