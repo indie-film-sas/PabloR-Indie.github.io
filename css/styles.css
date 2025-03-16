@@ -319,4 +319,44 @@ footer {
         right: 0; /* Remove right positioning */
         align-self: flex-start; /* Align to the start */
     }
+/* Estilos para sección de logos (sin espacio entre logos) */
+
+.support-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0; /* Sin espacio entre logos */
+}
+
+.support-logos a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.support-logos img {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* Vista horizontal (16:9): logos en dos filas de 8 logos cada una */
+@media (min-aspect-ratio: 16/9) {
+    .support-logos {
+        display: grid;
+        grid-template-columns: repeat(8, 100px);
+        justify-content: center;
+    }
+}
+
+/* Vista vertical (9:16): logos en múltiples filas */
+@media (max-aspect-ratio: 9/16) {
+    .support-logos {
+        grid-template-columns: repeat(auto-fill, 100px);
+    }
+}
 }
